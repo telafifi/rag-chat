@@ -27,25 +27,18 @@ A Retrieval-Augmented Generation (RAG) chatbot that allows you to chat with your
 - Required Python packages (see Installation)
 
 ## Installation
-
-1. **Clone the repository**:
+1. **Install dependencies**:
    ```bash
-   git clone <your-repo-url>
-   cd rag-chat
+   pip install langchain-anthropic langchain-community langchain-chroma langchain-huggingface sentence-transformers gradio python-dotenv
    ```
 
-2. **Install dependencies**:
-   ```bash
-   pip install langchain-anthropic langchain-community langchain-chroma sentence-transformers gradio python-dotenv
-   ```
-
-3. **Set up environment variables**:
+2. **Set up environment variables**:
    Create a `.env` file in the project root:
    ```bash
    ANTHROPIC_API_KEY=your_anthropic_api_key_here
    ```
 
-4. **Prepare your documents**:
+3. **Prepare your documents**:
    - Place your PDF files in the `data/` folder
    - The system will automatically process all PDFs in this directory
 
@@ -56,7 +49,7 @@ A Retrieval-Augmented Generation (RAG) chatbot that allows you to chat with your
 First, ingest your PDF documents into the vector database:
 
 ```bash
-python ingest_database.py
+python3 ingest_database.py
 ```
 
 This will:
@@ -76,7 +69,7 @@ Run the chatbot using the provided script:
 Or directly with Python:
 
 ```bash
-python chatbot.py
+python3 chatbot.py
 ```
 
 ### 3. Access the Interface
@@ -149,16 +142,21 @@ rag-chat/
    pip install langchain-anthropic
    ```
 
-2. **"No relevant docs were retrieved"**:
+2. **"No module named 'langchain_huggingface'"**:
+   ```bash
+   pip install langchain-huggingface
+   ```
+
+3. **"No relevant docs were retrieved"**:
    - Check if PDFs are in the `data/` folder
    - Re-run `ingest_database.py`
    - Verify PDFs are not corrupted
 
-3. **API Key Issues**:
+4. **API Key Issues**:
    - Ensure `ANTHROPIC_API_KEY` is set in `.env`
    - Verify the API key is valid and has credits
 
-4. **Port Already in Use**:
+5. **Port Already in Use**:
    - Kill existing processes: `pkill -f "python chatbot.py"`
    - Or change the port in `chatbot.py`
 
