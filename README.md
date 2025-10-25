@@ -27,18 +27,24 @@ A Retrieval-Augmented Generation (RAG) chatbot that allows you to chat with your
 - Required Python packages (see Installation)
 
 ## Installation
-1. **Install dependencies**:
+1. **Create a virtual environment** (recommended):
    ```bash
-   pip install langchain-anthropic langchain-community langchain-chroma langchain-huggingface sentence-transformers gradio python-dotenv
+   python3 -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
-2. **Set up environment variables**:
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Set up environment variables**:
    Create a `.env` file in the project root:
    ```bash
    ANTHROPIC_API_KEY=your_anthropic_api_key_here
    ```
 
-3. **Prepare your documents**:
+4. **Prepare your documents**:
    - Place your PDF files in the `data/` folder
    - The system will automatically process all PDFs in this directory
 
@@ -58,6 +64,8 @@ This will:
 - Create embeddings using HuggingFace transformers
 - Store everything in ChromaDB
 
+**Note**: If you're using a virtual environment, make sure it's activated before running commands.
+
 ### 2. Start the Chatbot
 
 Run the chatbot using the provided script:
@@ -69,6 +77,16 @@ Run the chatbot using the provided script:
 Or directly with Python:
 
 ```bash
+python3 chatbot.py
+```
+
+**Alternative**: If you prefer to run without the shell script:
+
+```bash
+# Make sure your virtual environment is activated
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+
+# Run the chatbot
 python3 chatbot.py
 ```
 
@@ -121,6 +139,7 @@ You can modify these settings in the respective files:
 ```
 rag-chat/
 ├── README.md                 # This file
+├── requirements.txt          # Python dependencies
 ├── .env                     # Environment variables (not tracked)
 ├── .gitignore              # Git ignore rules
 ├── chatbot.py              # Main chatbot application
