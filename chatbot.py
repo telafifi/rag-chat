@@ -31,8 +31,6 @@ retriever = vector_store.as_retriever(
 
 # call this function for every message added to the chatbot
 def stream_response(message, history):
-    #print(f"Input: {message}. History: {history}\n")
-
     # retrieve the relevant chunks based on the question asked
     docs = retriever.invoke(message)
     
