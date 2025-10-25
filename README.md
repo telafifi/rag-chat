@@ -183,22 +183,3 @@ Enable debug output by uncommenting the print statements in `chatbot.py`:
 ```python
 #print(f"Input: {message}. History: {history}\n")
 ```
-
-## License
-
-This project is open source. Please ensure you comply with Anthropic's usage policies when using their API.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## Support
-
-For issues and questions:
-- Check the troubleshooting section above
-- Review the error messages in the terminal
-- Ensure all dependencies are properly installed
